@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{%block title%}Welcome to the Surveys Page!{% endblock %}
+{% block content%}
+<h1>Choose a Survey!</h1>
+<form action="/survey" method="POST">
+    {% for i in range(surveynames | length) %}  
+    <input type="radio" id="{{surveynames[i]}}" name="survey" value="{{surveynames[i]}}">
+    <label for="{{surveynames[i]}}">{{surveytitles[i]}}</label><br>
+    {% endfor %}
+    <button>Choose Survey</button>
+    </form>
+{% endblock %}

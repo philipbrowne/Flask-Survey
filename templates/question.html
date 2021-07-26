@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{%block title%}{{title}}{% endblock %}
+{% block content  %}
+    <h1>{{title}}</h1>
+    <p>{{instructions}}</p>
+    <form action="../answer" method="POST">
+    <p><b>Question #{{questnum+1}}: </b>{{question}}</p>
+    {% for i in range(choices | length) %}  
+    <input type="radio" id="choice{{i}}" name="choice{{questnum}}" value="choice{{i}}">
+    <label for="choice{{i}}">{{choices[i]}}</label>
+    {% endfor %}
+    {% if allow_text == True %}
+    <br>
+    <label for="commend"></label>
+    <textarea id="comment" name="comment"
+          rows="5" cols="33" required></textarea>
+    {% endif %}
+    <button>Submit Answer</button>
+    </form>
+{% endblock  %}
