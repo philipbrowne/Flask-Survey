@@ -6,7 +6,7 @@
     <form action="../answer" method="POST">
     <p><b>Question #{{questnum+1}}: </b>{{question}}</p>
     {% for i in range(choices | length) %}  
-    <input type="radio" id="choice{{i}}" name="choice{{questnum}}" value="choice{{i}}">
+    <input type="radio" id="choice{{i}}" name="choice{{questnum}}" value="choice{{i}}" required>
     <label for="choice{{i}}">{{choices[i]}}</label>
     {% endfor %}
     {% if allow_text == True %}

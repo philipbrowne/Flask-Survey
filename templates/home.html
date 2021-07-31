@@ -4,9 +4,9 @@
 <h1>Choose a Survey!</h1>
 <form action="/survey" method="POST">
     {% for i in range(surveynames | length) %}  
-    <input type="radio" id="{{surveynames[i]}}" name="survey" value="{{surveynames[i]}}">
+    <input type="radio" id="{{surveynames[i]}}" name="survey" value="{{surveynames[i]}}" required>
     <label for="{{surveynames[i]}}">{{surveytitles[i]}}</label><br>
     {% endfor %}
-    <button>Choose Survey</button>
+    <br><button>Choose Survey</button>
     </form>
 {% endblock %}
